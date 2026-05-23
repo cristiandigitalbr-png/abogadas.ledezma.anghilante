@@ -127,6 +127,7 @@
     .hero-content {
       position: relative; z-index: 1;
       max-width: 700px;
+      display: flex; flex-direction: column; align-items: center;
     }
     .hero-tag {
       display: inline-flex; align-items: center; gap: 12px;
@@ -134,6 +135,7 @@
       text-transform: uppercase; color: var(--gold);
       margin-bottom: 32px;
       animation: fadeUp 0.6s ease both;
+      justify-content: center;
     }
     .hero-tag::before {
       content: '';
@@ -151,12 +153,12 @@
     h1 .amp { color: var(--gold); font-style: italic; }
     .hero-sub {
       color: var(--gray); font-size: 1.05rem; line-height: 1.8;
-      margin-top: 24px; max-width: 500px;
+      margin-top: 24px; max-width: 500px; text-align: center;
       animation: fadeUp 0.7s 0.2s ease both;
     }
     .hero-actions {
       display: flex; gap: 16px; align-items: center;
-      margin-top: 48px; flex-wrap: wrap;
+      margin-top: 48px; flex-wrap: wrap; justify-content: center;
       animation: fadeUp 0.7s 0.3s ease both;
     }
     .btn-primary {
@@ -176,12 +178,13 @@
     .btn-secondary:hover { color: var(--gold); }
     .hero-abogadas {
       margin-top: 64px;
-      display: flex; gap: 40px; flex-wrap: wrap;
+      display: flex; gap: 40px; flex-wrap: wrap; justify-content: center;
       animation: fadeUp 0.7s 0.4s ease both;
       padding-top: 40px;
       border-top: 1px solid rgba(184,150,62,0.2);
+      width: 100%;
     }
-    .abogada-item { display: flex; flex-direction: column; gap: 4px; }
+    .abogada-item { display: flex; flex-direction: column; gap: 4px; align-items: center; }
     .abogada-name {
       font-family: var(--font-display);
       font-size: 1rem; font-weight: 600; color: var(--white);
@@ -388,8 +391,10 @@
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
+    @media (min-width: 900px) {
+      h1 { font-size: clamp(2.8rem, 4.5vw, 5rem); white-space: nowrap; }
+      h1 .accent { display: block; font-size: 0.6em; margin-top: 8px; white-space: normal; }
+    }
       #quienes, #contacto { grid-template-columns: 1fr; gap: 48px; }
       .nav-links, .nav-cta { display: none; }
       .hero-abogadas { gap: 24px; }
@@ -426,8 +431,7 @@
     <div class="hero-content">
       <div class="hero-tag">Estudio Jurídico</div>
       <h1>
-        Ledezma <span class="amp">&</span><br>
-        Anghilante<br>
+        Ledezma <span class="amp">&</span> Anghilante<br>
         <span class="accent">Abogadas</span>
       </h1>
       <p class="hero-sub">
