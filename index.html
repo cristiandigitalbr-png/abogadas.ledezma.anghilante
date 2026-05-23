@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ledezma & Anghilante | Abogadas</title>
+  <meta name="description" content="Estudio jurídico Ledezma & Anghilante. Soluciones legales claras y efectivas en Derecho de Familia, Civil, Laboral, Salud e Internacional. Córdoba, Argentina."/>
+  <meta property="og:title" content="Ledezma & Anghilante | Abogadas"/>
+  <meta property="og:description" content="Soluciones legales claras y efectivas, a tu medida."/>
+  <meta property="og:type" content="website"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #b8963e;
+      --gold-light: #d4af6a;
+      --gold-dark: #8a6e2a;
+      --navy: #0d1b2a;
+      --navy2: #142236;
+      --navy3: #1c2f47;
+      --navy4: #243555;
+      --gray: #8899aa;
+      --white: #f5f0e8;
+      --font-display: 'Playfair Display', serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--navy); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 6vw;
+      background: rgba(13,27,42,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(184,150,62,0.2);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700; letter-spacing: 1px;
+      color: var(--white); text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: var(--gray); text-decoration: none;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--gold-light); }
+    .nav-cta {
+      background: transparent; color: var(--gold);
+      padding: 10px 24px; border-radius: 3px;
+      font-weight: 600; font-size: 0.85rem; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      border: 1px solid var(--gold);
+      transition: all 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--navy); }
+
+    /* HERO */
+    #hero {
+      min-height: 100vh;
+      position: relative; overflow: hidden;
+      display: flex; align-items: center;
+      padding: 120px 6vw 80px;
+    }
+    .hero-bg-img {
+      position: absolute; inset: 0; z-index: 0;
+      background: linear-gradient(135deg, rgba(13,27,42,0.97) 0%, rgba(13,27,42,0.85) 50%, rgba(13,27,42,0.75) 100%),
+        url('hero-bg.jpg') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 0;
+      background: radial-gradient(ellipse 60% 80% at 80% 50%, rgba(184,150,62,0.08) 0%, transparent 70%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(184,150,62,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(184,150,62,0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 700px;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease both;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 40px; height: 1px; background: var(--gold);
+    }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5.5rem);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.5px;
+      animation: fadeUp 0.7s 0.1s ease both;
+      color: var(--white);
+    }
+    h1 .accent { color: var(--gold); }
+    h1 .amp { color: var(--gold); font-style: italic; }
+    .hero-sub {
+      color: var(--gray); font-size: 1.05rem; line-height: 1.8;
+      margin-top: 24px; max-width: 500px;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+    .hero-actions {
+      display: flex; gap: 16px; align-items: center;
+      margin-top: 48px; flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--gold); color: var(--navy);
+      padding: 15px 36px; border-radius: 3px;
+      font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px;
+      text-transform: uppercase; text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-secondary {
+      color: var(--white); text-decoration: none;
+      font-weight: 500; font-size: 0.9rem;
+      display: flex; align-items: center; gap: 8px;
+      transition: color 0.2s;
+    }
+    .btn-secondary:hover { color: var(--gold); }
+    .hero-abogadas {
+      margin-top: 64px;
+      display: flex; gap: 40px; flex-wrap: wrap;
+      animation: fadeUp 0.7s 0.4s ease both;
+      padding-top: 40px;
+      border-top: 1px solid rgba(184,150,62,0.2);
+    }
+    .abogada-item { display: flex; flex-direction: column; gap: 4px; }
+    .abogada-name {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 600; color: var(--white);
+    }
+    .abogada-mp { font-size: 0.8rem; color: var(--gold); letter-spacing: 1px; }
+
+    /* SECTIONS */
+    section { padding: 100px 6vw; }
+    .section-tag {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-size: 0.72rem; font-weight: 600; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 16px;
+    }
+    .section-tag::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+    h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700; line-height: 1.1; color: var(--white);
+    }
+    h2 .accent { color: var(--gold); }
+    .section-intro {
+      color: var(--gray); font-size: 1rem; line-height: 1.8;
+      max-width: 600px; margin-top: 16px;
+    }
+
+    /* AREAS */
+    #areas { background: var(--navy2); }
+    .areas-header { margin-bottom: 64px; }
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2px;
+    }
+    .area-card {
+      background: var(--navy3);
+      padding: 48px 36px;
+      position: relative; overflow: hidden;
+      transition: background 0.3s, transform 0.3s ease;
+      cursor: default;
+    }
+    .area-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold);
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+    }
+    .area-card:hover { background: var(--navy4); transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+    .area-card:hover::before { transform: scaleX(1); }
+    .area-icon { font-size: 2rem; margin-bottom: 20px; display: block; }
+    .area-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.3rem; font-weight: 700; color: var(--white);
+      margin-bottom: 20px;
+    }
+    .area-items { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .area-items li {
+      color: var(--gold-light); font-size: 0.9rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .area-items li::before {
+      content: '—'; color: var(--gold); font-size: 0.7rem; flex-shrink: 0;
+    }
+    .area-num {
+      position: absolute; bottom: 20px; right: 24px;
+      font-family: var(--font-display);
+      font-size: 4rem; font-weight: 900;
+      color: rgba(184,150,62,0.05); line-height: 1; pointer-events: none;
+    }
+
+    /* QUIENES */
+    #quienes {
+      background: var(--navy);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .quienes-visual {
+      position: relative;
+    }
+    .quienes-box {
+      background: var(--navy2);
+      border: 1px solid rgba(184,150,62,0.2);
+      padding: 48px;
+      position: relative;
+    }
+    .quienes-box::after {
+      content: ''; position: absolute; bottom: -12px; right: -12px;
+      width: 100%; height: 100%;
+      border: 1px solid rgba(184,150,62,0.1); z-index: -1;
+    }
+    .balance-icon {
+      font-size: 5rem; text-align: center; display: block;
+      color: var(--gold); opacity: 0.3; margin-bottom: 24px;
+    }
+    .quienes-box p {
+      color: var(--gray); font-size: 0.95rem; line-height: 1.8; text-align: center;
+    }
+    .valores { margin-top: 40px; }
+    .valor {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      transition: transform 0.3s ease;
+    }
+    .valor:last-child { border-bottom: none; }
+    .valor:hover { transform: translateX(6px); }
+    .valor-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: rgba(184,150,62,0.1);
+      border: 1px solid rgba(184,150,62,0.3);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .valor-title {
+      font-family: var(--font-display);
+      font-size: 1rem; font-weight: 600; color: var(--white);
+      margin-bottom: 4px;
+    }
+    .valor-desc { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
+
+    /* TESTIMONIOS */
+    #testimonios { background: var(--navy2); }
+    .testimonios-header { text-align: center; margin-bottom: 64px; }
+    .testimonios-header .section-intro { margin: 16px auto 0; }
+    .testimonios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+    .testimonio-card {
+      background: var(--navy);
+      border: 1px solid rgba(184,150,62,0.15);
+      padding: 40px 32px;
+      border-radius: 4px;
+      position: relative;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .testimonio-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .quote-mark {
+      font-family: var(--font-display);
+      font-size: 5rem; line-height: 0.5;
+      color: var(--gold); opacity: 0.3;
+      margin-bottom: 24px; display: block;
+    }
+    .testimonio-card p {
+      color: var(--gray); font-size: 0.95rem; line-height: 1.8;
+      font-style: italic;
+    }
+    .testimonio-autor {
+      margin-top: 24px; padding-top: 20px;
+      border-top: 1px solid rgba(184,150,62,0.15);
+      font-family: var(--font-display);
+      font-weight: 600; color: var(--white); font-size: 0.95rem;
+    }
+
+    /* CONTACTO */
+    #contacto {
+      background: var(--navy);
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: start;
+    }
+    .contact-channels { display: flex; flex-direction: column; gap: 16px; margin-top: 40px; }
+    .channel {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px; background: var(--navy2);
+      border: 1px solid rgba(184,150,62,0.15);
+      border-radius: 3px; text-decoration: none; color: var(--white);
+      transition: border-color 0.2s, transform 0.3s ease;
+    }
+    .channel:hover { border-color: var(--gold); transform: translateX(6px); }
+    .channel-icon { font-size: 1.4rem; }
+    .channel-label { font-size: 0.72rem; color: var(--gold); text-transform: uppercase; letter-spacing: 1.5px; }
+    .channel-value { font-weight: 500; font-size: 0.92rem; color: var(--white); }
+    .contact-text { padding-top: 16px; }
+    .contact-text h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem; font-weight: 700; margin-bottom: 16px;
+    }
+    .contact-text p { color: var(--gray); font-size: 0.95rem; line-height: 1.8; }
+
+    /* FOOTER */
+    footer {
+      background: var(--navy2);
+      border-top: 1px solid rgba(184,150,62,0.15);
+      padding: 40px 6vw;
+      display: flex; flex-direction: column;
+      align-items: center; text-align: center; gap: 12px;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 1.2rem; font-weight: 700; color: var(--white);
+    }
+    .footer-logo span { color: var(--gold); }
+    .footer-copy { color: var(--gray); font-size: 0.82rem; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float1 {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-6px); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      #quienes, #contacto { grid-template-columns: 1fr; gap: 48px; }
+      .nav-links, .nav-cta { display: none; }
+      .hero-abogadas { gap: 24px; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 16px 5vw; }
+      section { padding: 72px 5vw; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">L<span>&</span>A Abogadas</a>
+    <ul class="nav-links">
+      <li><a href="#areas">Áreas</a></li>
+      <li><a href="#quienes">Nosotras</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="https://wa.me/5493385524046" class="nav-cta">Consulta gratis</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg-img"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Estudio Jurídico</div>
+      <h1>
+        Ledezma <span class="amp">&</span><br>
+        Anghilante<br>
+        <span class="accent">Abogadas</span>
+      </h1>
+      <p class="hero-sub">
+        Soluciones legales claras y efectivas, a tu medida. Asesoramiento profesional, humano y cercano en cada etapa de tu caso.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5493385524046" class="btn-primary">Consultá ahora</a>
+        <a href="#areas" class="btn-secondary">Ver áreas de práctica →</a>
+      </div>
+      <div class="hero-abogadas">
+        <div class="abogada-item">
+          <div class="abogada-name">Wanda Ledezma</div>
+          <div class="abogada-mp">Abogada · M.P. 2-1939</div>
+        </div>
+        <div class="abogada-item">
+          <div class="abogada-name">M. Victoria Anghilante</div>
+          <div class="abogada-mp">Abogada · M.P. 2-2058</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁREAS DE PRÁCTICA -->
+  <section id="areas">
+    <div class="areas-header reveal">
+      <div class="section-tag">Especialidades</div>
+      <h2>Áreas de <span class="accent">práctica</span></h2>
+      <p class="section-intro">Nos especializamos en brindar asesoría y representación legal en distintas ramas del derecho, con un enfoque profesional, humano y cercano.</p>
+    </div>
+    <div class="areas-grid reveal">
+      <div class="area-card">
+        <span class="area-icon">👨‍👩‍👧</span>
+        <h3>Derecho de Familia</h3>
+        <ul class="area-items">
+          <li>Divorcios</li>
+          <li>Cuotas alimentarias</li>
+          <li>Régimen de comunicación</li>
+          <li>Tenencia y cuidado</li>
+        </ul>
+        <div class="area-num">01</div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">📜</span>
+        <h3>Derecho Civil y Sucesorio</h3>
+        <ul class="area-items">
+          <li>Sucesiones</li>
+          <li>Contratos y obligaciones</li>
+          <li>Reclamo de deudas</li>
+          <li>Prescripciones</li>
+        </ul>
+        <div class="area-num">02</div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">⚕️</span>
+        <h3>Derecho a la Salud</h3>
+        <ul class="area-items">
+          <li>Amparos de salud</li>
+          <li>Cobertura de medicamentos</li>
+          <li>Tratamientos médicos</li>
+        </ul>
+        <div class="area-num">03</div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">⚖️</span>
+        <h3>Derecho Laboral y Previsional</h3>
+        <ul class="area-items">
+          <li>Accidentes de trabajo</li>
+          <li>Despidos y diferencias salariales</li>
+          <li>Jubilaciones y pensiones</li>
+        </ul>
+        <div class="area-num">04</div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">🛒</span>
+        <h3>Derecho del Consumidor y Patrimonial</h3>
+        <ul class="area-items">
+          <li>Planes de ahorro automotor</li>
+          <li>Defensa del consumidor</li>
+        </ul>
+        <div class="area-num">05</div>
+      </div>
+      <div class="area-card">
+        <span class="area-icon">🌍</span>
+        <h3>Derecho Internacional y Ciudadanías</h3>
+        <ul class="area-items">
+          <li>Ciudadanía italiana</li>
+          <li>Asesoría judicial en Italia</li>
+          <li>Representación en consulados</li>
+        </ul>
+        <div class="area-num">06</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section id="quienes">
+    <div class="quienes-visual reveal">
+      <div class="quienes-box">
+        <span class="balance-icon">⚖️</span>
+        <p>Somos un estudio jurídico conformado por dos profesionales comprometidas con brindar soluciones legales claras, efectivas y personalizadas. Trabajamos con dedicación, transparencia y cercanía en cada caso.</p>
+        <div style="margin-top: 32px; display: flex; flex-direction: column; gap: 20px;">
+          <div style="padding: 20px; background: rgba(184,150,62,0.06); border-left: 3px solid var(--gold);">
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 4px;">Wanda Ledezma</div>
+            <div style="font-size: 0.82rem; color: var(--gold); letter-spacing: 1px;">Abogada · M.P. 2-1939</div>
+          </div>
+          <div style="padding: 20px; background: rgba(184,150,62,0.06); border-left: 3px solid var(--gold);">
+            <div style="font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 4px;">M. Victoria Anghilante</div>
+            <div style="font-size: 0.82rem; color: var(--gold); letter-spacing: 1px;">Abogada · M.P. 2-2058</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-tag">Nosotras</div>
+      <h2>Tu caso en <span class="accent">manos expertas</span></h2>
+      <p class="section-intro">No somos un estudio más. Somos tu equipo legal de confianza, presente en cada etapa del proceso.</p>
+      <div class="valores">
+        <div class="valor">
+          <div class="valor-icon">⚡</div>
+          <div>
+            <div class="valor-title">Respuesta rápida</div>
+            <div class="valor-desc">Respondemos en menos de 24 horas. Tu consulta no queda sin respuesta.</div>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">🎯</div>
+          <div>
+            <div class="valor-title">Enfoque en resultados</div>
+            <div class="valor-desc">Cada estrategia legal está diseñada para resolver tu caso de la mejor manera.</div>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">💬</div>
+          <div>
+            <div class="valor-title">Comunicación clara</div>
+            <div class="valor-desc">Te explicamos cada paso sin tecnicismos. Siempre sabés cómo va tu caso.</div>
+          </div>
+        </div>
+        <div class="valor">
+          <div class="valor-icon">🤝</div>
+          <div>
+            <div class="valor-title">Trato humano y cercano</div>
+            <div class="valor-desc">Entendemos que detrás de cada caso hay una persona. Te acompañamos con empatía.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section id="testimonios">
+    <div class="testimonios-header reveal">
+      <div class="section-tag" style="justify-content: center;">Clientes</div>
+      <h2>Lo que dicen <span class="accent">de nosotras</span></h2>
+      <p class="section-intro">La confianza de nuestros clientes es el mejor reflejo de nuestro trabajo.</p>
+    </div>
+    <div class="testimonios-grid reveal">
+      <div class="testimonio-card">
+        <span class="quote-mark">"</span>
+        <p>Genias!! Excelente el trabajo que hicieron, super confiable, prolijo y responsable. Las recomiendo. Gracias!!</p>
+        <div class="testimonio-autor">M.L. González</div>
+      </div>
+      <div class="testimonio-card">
+        <span class="quote-mark">"</span>
+        <p>Presenté mi carpeta de ciudadanía en el consulado y gracias a ustedes fui el único con el trámite completo. Las recomiendo!!</p>
+        <div class="testimonio-autor">E. Compagnnucci</div>
+      </div>
+      <div class="testimonio-card">
+        <span class="quote-mark">"</span>
+        <p>Excelente atención, me sentí acompañada en todo momento. Gracias a ellas pude resolver un problema de años.</p>
+        <div class="testimonio-autor">M. Chiapello</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="reveal">
+      <div class="section-tag">Contacto</div>
+      <h2>Empezá tu <span class="accent">consulta</span></h2>
+      <p class="section-intro">Queremos ayudarte. Escribinos para tu consulta personalizada.</p>
+      <div class="contact-channels">
+        <a href="https://wa.me/5493385524046" class="channel" target="_blank">
+          <span class="channel-icon">💬</span>
+          <div>
+            <div class="channel-label">WhatsApp</div>
+            <div class="channel-value">3385 524046</div>
+          </div>
+        </a>
+        <a href="https://wa.me/5493385442818" class="channel" target="_blank">
+          <span class="channel-icon">💬</span>
+          <div>
+            <div class="channel-label">WhatsApp</div>
+            <div class="channel-value">3385 442818</div>
+          </div>
+        </a>
+        <a href="mailto:estudio.alabogadas@gmail.com" class="channel">
+          <span class="channel-icon">✉️</span>
+          <div>
+            <div class="channel-label">Email</div>
+            <div class="channel-value">estudio.alabogadas@gmail.com</div>
+          </div>
+        </a>
+        <a href="https://instagram.com/abogadas.ledezma.anghilante" class="channel" target="_blank">
+          <span class="channel-icon">📸</span>
+          <div>
+            <div class="channel-label">Instagram</div>
+            <div class="channel-value">@abogadas.ledezma.anghilante</div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="contact-text reveal">
+      <h3>¿Tenés una consulta legal?</h3>
+      <p>Estamos disponibles para escucharte y orientarte. Sin compromiso, con total confidencialidad.</p>
+      <div style="margin-top: 40px; padding: 40px; background: var(--navy2); border: 1px solid rgba(184,150,62,0.2);">
+        <div style="font-family: var(--font-display); font-size: 3rem; color: var(--gold); opacity: 0.2; text-align: center;">⚖️</div>
+        <p style="text-align: center; color: var(--gray); font-style: italic; margin-top: 16px; line-height: 1.8;">"El acceso a la justicia es un derecho. Estamos aquí para ayudarte a ejercerlo."</p>
+        <div style="text-align: center; margin-top: 16px;">
+          <span style="font-family: var(--font-display); color: var(--gold); font-size: 0.9rem;">— Ledezma & Anghilante</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Ledezma <span>&</span> Anghilante</div>
+    <div class="footer-copy">© 2026 Ledezma & Anghilante Abogadas · Todos los derechos reservados</div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
